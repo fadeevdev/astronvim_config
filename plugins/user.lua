@@ -9,5 +9,6 @@ return {
   --     require("lsp_signature").setup()
   --   end,
   -- },
-  "ellisonleao/gruvbox.nvim"
+  "ellisonleao/gruvbox.nvim",
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000 }
 }
