@@ -10,5 +10,14 @@ return {
   --   end,
   -- },
   "ellisonleao/gruvbox.nvim",
-  { "catppuccin/nvim", name = "catppuccin", priority = 1000 }
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+  { "frenzyexists/aquarium-vim", name = "aquarium", branch = "develop",
+    config = function()
+        vim.o.background = "light"
+    end,
+ },
+  {'eddyekofo94/gruvbox-flat.nvim',
+    priority = 1000,
+    enabled = true,
+  },
 }
