@@ -17,6 +17,23 @@ return {
     diagnostics_mode = 3, -- set the visibility of diagnostics in the UI (0=off, 1=only show in status line, 2=virtual text off, 3=all on)
     icons_enabled = true, -- disable icons in the UI (disable if no nerd font is available, requires :PackerSync after changing)
     ui_notifications_enabled = true, -- disable notifications when toggling UI elements
+    -- add clipboard support for wsl
+    clipboard = {
+            name = "wl-clipboard (wsl)",
+            copy = {
+                ["+"] = 'wl-copy --foreground --type text/plain',
+                ["*"] = 'wl-copy --foreground --primary --type text/plain',
+            },
+            paste = {
+                ["+"] = (function()
+                    return vim.fn.systemlist('wl-paste --no-newline|sed -e "s/\r$//"', {''}, 1) -- '1' keeps empty lines
+                end),
+                ["*"] = (function() 
+                    return vim.fn.systemlist('wl-paste --primary --no-newline|sed -e "s/\r$//"', {''}, 1)
+                end),
+            },
+            cache_enabled = true
+        },
   },
 }
 -- If you need more control, you can use the function()...end notation
