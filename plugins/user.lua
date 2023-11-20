@@ -15,7 +15,7 @@ return {
     config = function()
         vim.o.background = "light"
     end,
- },
+  },
   {'eddyekofo94/gruvbox-flat.nvim',
     priority = 1000,
     enabled = true,
@@ -23,4 +23,10 @@ return {
       vim.g.gruvbox_transparent = 1
     end,
   },
+  {
+    "rcarriga/nvim-notify",
+    config = function()
+      vim.o.background_colour = "#000000"
+    end,
+  }
 }
